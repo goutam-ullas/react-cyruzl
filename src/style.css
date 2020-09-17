@@ -307,7 +307,7 @@ right: 0;
 top: 0;
 background-color: black;
 overflow:scroll;
-transition: width 2.2s;
+transition: width 1s;
 }
 
 .legend {
@@ -329,7 +329,7 @@ right: 0;
 top: 0;
 background-color: black;
 overflow:scroll;
-transition: width 2.2s;
+transition: width 1s;
 }
 
 .legendItem{
