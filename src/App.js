@@ -163,8 +163,8 @@ class Application extends React.Component {
     this.setState(prevState => ({
       aboutState: !prevState.aboutState
     }));
-    if (this.state.legendState == false) {
-      this.setState({ legendWidth: 0, legendState: true });
+    if (this.state.researchState == false) {
+      this.setState({ researchWidth: 0, researchState: true });
     }
     if (this.state.aboutState == true) {
       this.setState({ aboutWidth: window.innerWidth / 2 });
