@@ -36,6 +36,7 @@ class Application extends React.Component {
       aboutWidth: 0,
       researchState: true,
       researchWidth: 0,
+      researchBorder:0,
       legendState: true,
       legendHeight: 0,
       squareText: "",
@@ -206,9 +207,9 @@ class Application extends React.Component {
       this.setState({ legendHeight: 0, legendState: true });
     }
     if (this.state.researchState == true) {
-      this.setState({ researchWidth: window.innerWidth / 2 });
+      this.setState({ researchWidth: window.innerWidth / 2 , researchBorder:50});
     } else {
-      this.setState({ researchWidth: 0 });
+      this.setState({ researchWidth: 0, researchBorder: 0 });
     }
   }
 
@@ -576,6 +577,7 @@ class Application extends React.Component {
           className="research"
           style={{
             width: this.state.researchWidth,
+            leftBorder: this.state.researchBorder,
             height: window.innerHeight,
             fontSize: 28,
             zIndex: 100
