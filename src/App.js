@@ -581,21 +581,22 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
-          <span
-            role="button"
-            aria-label=""
-            onClick={this.researchFunction}
-            style={{
-              fontSize: 22,
-              position: "fixed",
-              marginLeft: 10,
-              marginTop: 10,
-              color: "white",
-              zIndex: 300
-            }}
-          >
-            &#10005;
-          </span>
+          <div style={{ float: left, marginLeft: 50 }}>
+            <span
+              role="button"
+              aria-label=""
+              onClick={this.researchFunction}
+              style={{
+                fontSize: 22,
+                position: "fixed",
+                marginLeft: 10,
+                marginTop: 10,
+                color: "white",
+                zIndex: 300
+              }}
+            >
+              &#10005;
+            </span>
             <img
               style={{
                 position: "relative",
@@ -616,6 +617,7 @@ class Application extends React.Component {
               height={(4 * window.innerHeight) / 5}
               width="auto"
             />
+          </div>
         </div>
       </div>
     );
