@@ -322,6 +322,10 @@ transition: height 0.5s;
 }
 
 .research {
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+border-left: 50px solid black;
 color: white;
 position: fixed;
 display:  flex;

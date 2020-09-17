@@ -544,7 +544,7 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
-          <p style={{ margin: 50, fontSize:18}}> {this.aboutText} </p>
+          <p style={{ margin: 50, fontSize: 18 }}> {this.aboutText} </p>
         </div>
         <div
           className="legend"
@@ -588,7 +588,6 @@ class Application extends React.Component {
             style={{
               fontSize: 22,
               position: "fixed",
-              marginLeft: 10,
               marginTop: 10,
               color: "white",
               zIndex: 300
@@ -597,13 +596,13 @@ class Application extends React.Component {
             &#10005;
           </span>
           <img
-            style={{marginLeft: 50, marginTop: window.innerHeight/10}}
+            style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
             src="https://i.imgur.com/oEgq3R8.jpg"
             height={(4 * window.innerHeight) / 5}
             width="auto"
           />
           <img
-            style={{marginLeft: 50, marginTop: window.innerHeight/10}}
+            style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
             src="https://i.imgur.com/Fn7Komh.jpg"
             height={(4 * window.innerHeight) / 5}
             width="auto"
