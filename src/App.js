@@ -596,6 +596,7 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
+          <div className = "researchContainer">
           <img
             style={{
               position: "relative",
@@ -616,6 +617,7 @@ class Application extends React.Component {
             height={(4 * window.innerHeight) / 5}
             width="auto"
           />
+          </div>
         </div>
       </div>
     );
