@@ -522,7 +522,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.aboutFunction}
             style={{
-              fontSize: 28,
+              fontSize: 22,
               position: "absolute",
               left: 10,
               color: "white",
@@ -547,7 +547,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.legendFunction}
             style={{
-              fontSize: 28,
+              fontSize: 22,
               position: "absolute",
               left: 10,
               color: "white",
@@ -572,7 +572,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.researchFunction}
             style={{
-              fontSize: 28,
+              fontSize: 22,
               position: "fixed",
               marginLeft: 10,
               color: "white",
