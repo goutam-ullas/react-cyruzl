@@ -519,7 +519,7 @@ class Application extends React.Component {
           <p style={{ margin: 50 }}> {this.aboutText} </p>
         </div>
         <div
-          className="legend"
+          className="research"
           style={{
             width: this.state.legendWidth,
             height: window.innerHeight,
