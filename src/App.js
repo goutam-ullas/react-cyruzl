@@ -35,7 +35,7 @@ class Application extends React.Component {
       aboutState: true,
       aboutWidth: 0,
       researchState: true,
-      researchWidth: 0,      
+      researchWidth: 0,
       legendState: true,
       legendHeight: 0,
       squareText: "",
@@ -536,8 +536,8 @@ class Application extends React.Component {
         <div
           className="legend"
           style={{
-            width: this.state.legendWidth,
-            height: window.legendHeight,
+            width: window.innerWidth,
+            height: this.state.legendHeight,
             fontSize: 28,
             zIndex: 100
           }}
@@ -556,7 +556,7 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
-          <p style={{ margin: 50 }}> {this.aboutText} </p>
+          <p style={{ margin: 50 }}> legend </p>
         </div>
         <div
           className="research"
