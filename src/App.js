@@ -34,6 +34,8 @@ class Application extends React.Component {
       circleState: 1,
       aboutState: true,
       aboutWidth: 0,
+      researchState: true,
+      researchWidth: 0,      
       legendState: true,
       legendWidth: 0,
       squareText: "",
@@ -56,6 +58,7 @@ class Application extends React.Component {
     this.circleFunction = this.circleFunction.bind(this);
     this.squareFunction = this.squareFunction.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
+    this.legendFunction = this.legendFunction.bind(this);
     this.researchFunction = this.researchFunction.bind(this);
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -170,18 +173,30 @@ class Application extends React.Component {
     }
   }
 
-  researchFunction() {
+  legendFunction() {
     console.log("legend");
     this.setState(prevState => ({
       legendState: !prevState.legendState
     }));
+    if (this.state.legendState == true) {
+      this.setState({ legendHeight: window.innerHeight / 10 });
+    } else {
+      this.setState({ legendHeight: 0 });
+    }
+  }
+
+  researchFunction() {
+    console.log("research");
+    this.setState(prevState => ({
+      researchState: !prevState.researchState
+    }));
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
     }
-    if (this.state.legendState == true) {
-      this.setState({ legendWidth: window.innerWidth / 2 });
+    if (this.state.researchState == true) {
+      this.setState({ researchWidth: window.innerWidth / 2 });
     } else {
-      this.setState({ legendWidth: 0 });
+      this.setState({ researchWidth: 0 });
     }
   }
 
@@ -313,28 +328,28 @@ class Application extends React.Component {
             pointerEvents: "none"
           }}
         >
-          <div style={{padding: 20, zIndex:10}}>
+          <div style={{ padding: 20, zIndex: 10 }}>
             <text
               style={{
                 backgroundColor: "black",
                 color: "white",
                 alignSelf: "flex-start",
                 fontSize: 34,
-                fontFamily: 'Helvetica, Sans-Serif',
-                fontStyle: 'oblique'
+                fontFamily: "Helvetica, Sans-Serif",
+                fontStyle: "oblique"
               }}
             >
               {this.theme2Title}
             </text>
           </div>
-          <div style={{padding: 20, zIndex:10}}>
+          <div style={{ padding: 20, zIndex: 10 }}>
             <text
               style={{
                 backgroundColor: "black",
                 color: "white",
                 alignSelf: "flex-start",
-                fontFamily: 'Helvetica, Sans-Serif',
-                fontStyle: 'oblique'
+                fontFamily: "Helvetica, Sans-Serif",
+                fontStyle: "oblique"
               }}
             >
               {this.theme2Desc}
@@ -519,9 +534,34 @@ class Application extends React.Component {
           <p style={{ margin: 50 }}> {this.aboutText} </p>
         </div>
         <div
-          className="research"
+          className="legend"
           style={{
             width: this.state.legendWidth,
+            height: window.legendHeight,
+            fontSize: 28,
+            zIndex: 100
+          }}
+        >
+          <span
+            role="button"
+            aria-label=""
+            onClick={this.legendFunction}
+            style={{
+              fontSize: 28,
+              position: "absolute",
+              left: 10,
+              color: "white",
+              zIndex: 300
+            }}
+          >
+            &#10005;
+          </span>
+          <p style={{ margin: 50 }}> {this.aboutText} </p>
+        </div>
+        <div
+          className="research"
+          style={{
+            width: this.state.researchWidth,
             height: window.innerHeight,
             fontSize: 28,
             zIndex: 100

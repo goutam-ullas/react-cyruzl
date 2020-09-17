@@ -310,6 +310,17 @@ overflow:scroll;
 transition: width 0.5s;
 }
 
+.legend {
+color: white;
+position: fixed;
+display:  flex;
+left: 0;
+bottom: 0;
+background-color: black;
+overflow:scroll;
+transition: height 0.5s;
+}
+
 .research {
 color: white;
 position: fixed;
