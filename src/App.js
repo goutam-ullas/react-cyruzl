@@ -510,7 +510,7 @@ class Application extends React.Component {
               fontSize: 28,
               position: "absolute",
               left: 10,
-              color: "blue",
+              color: "white",
               zIndex: 300
             }}
           >
@@ -535,7 +535,7 @@ class Application extends React.Component {
               fontSize: 28,
               position: "fixed",
               marginLeft: 10,
-              color: "blue",
+              color: "white",
               zIndex: 300
             }}
           >
