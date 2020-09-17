@@ -317,6 +317,7 @@ display:  flex;
 left: 0;
 bottom: 0;
 background-color: black;
+opacity:0.5;
 overflow:scroll;
 transition: height 0.5s;
 }

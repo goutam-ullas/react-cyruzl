@@ -179,7 +179,7 @@ class Application extends React.Component {
       legendState: !prevState.legendState
     }));
     if (this.state.legendState == true) {
-      this.setState({ legendHeight: window.innerHeight / 10 });
+      this.setState({ legendHeight: window.innerHeight / 5 });
     } else {
       this.setState({ legendHeight: 0 });
     }
