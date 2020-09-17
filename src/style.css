@@ -330,6 +330,7 @@ top: 0;
 background-color: black;
 overflow:scroll;
 transition: width 1s;
+border-left: 50px solid black;
 }
 
 .legendItem{
