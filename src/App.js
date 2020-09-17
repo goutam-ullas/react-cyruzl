@@ -524,7 +524,8 @@ class Application extends React.Component {
             style={{
               fontSize: 22,
               position: "absolute",
-              left: 10,
+              marginLeft: 10,
+              marginTop: 10,
               color: "white",
               zIndex: 300
             }}
@@ -549,7 +550,8 @@ class Application extends React.Component {
             style={{
               fontSize: 22,
               position: "absolute",
-              left: 10,
+              marginLeft: 10,
+              marginTop: 10,
               color: "white",
               zIndex: 300
             }}
@@ -575,6 +577,7 @@ class Application extends React.Component {
               fontSize: 22,
               position: "fixed",
               marginLeft: 10,
+              marginTop: 10,
               color: "white",
               zIndex: 300
             }}
