@@ -421,7 +421,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.aboutFunction}
             style={{
-              fontSize: 28,
+              fontSize: 24,
               position: "relative",
               display: "inline",
               top: 0,
@@ -508,7 +508,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.researchFunction}
             style={{
-              fontSize: 28,
+              fontSize: 24,
               position: "relative",
               display: "inline",
               top: 0,
@@ -581,22 +581,21 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
-          <div style={{ float: left, marginLeft: 50 }}>
-            <span
-              role="button"
-              aria-label=""
-              onClick={this.researchFunction}
-              style={{
-                fontSize: 22,
-                position: "fixed",
-                marginLeft: 10,
-                marginTop: 10,
-                color: "white",
-                zIndex: 300
-              }}
-            >
-              &#10005;
-            </span>
+          <span
+            role="button"
+            aria-label=""
+            onClick={this.researchFunction}
+            style={{
+              fontSize: 22,
+              position: "fixed",
+              marginLeft: 10,
+              marginTop: 10,
+              color: "white",
+              zIndex: 300
+            }}
+          >
+            &#10005;
+          </span>
             <img
               style={{
                 position: "relative",
@@ -619,7 +618,6 @@ class Application extends React.Component {
             />
           </div>
         </div>
-      </div>
     );
   }
 }
