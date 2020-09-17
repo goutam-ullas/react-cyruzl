@@ -331,6 +331,10 @@ background-color: black;
 overflow:scroll;
 transition: width 1s;
 }
+.researchContainer {
+  float: left;
+  margin-left: 50;
+}
 
 .legendItem{
   font-size: 38px;
