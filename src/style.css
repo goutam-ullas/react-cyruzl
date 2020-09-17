@@ -306,7 +306,6 @@ display:  flex;
 right: 0;
 top: 0;
 background-color: black;
-opacity:0.9;
 overflow:scroll;
 transition: width 0.5s;
 }
@@ -318,7 +317,6 @@ display:  flex;
 left: 0;
 bottom: 0;
 background-color: black;
-opacity:0.9;
 overflow:scroll;
 transition: height 0.5s;
 }
@@ -330,7 +328,6 @@ display:  flex;
 right: 0;
 top: 0;
 background-color: black;
-opacity:0.9;
 overflow:scroll;
 transition: width 0.5s;
 }
