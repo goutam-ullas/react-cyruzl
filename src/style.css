@@ -2,7 +2,7 @@
 
 :root {
   --balloon-border-radius: 0px;
-  --balloon-color: #2f1dfc;
+  --balloon-color: black;
   --balloon-text-color: #fff;
   --balloon-font-size: 12px;
   --balloon-move: 12px;
