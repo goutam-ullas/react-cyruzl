@@ -186,7 +186,7 @@ class Application extends React.Component {
     }
     if (this.state.researchState == false) {
       this.setState({ researchWidth: 0, researchState: true });
-    }    
+    }
     if (this.state.legendState == true) {
       this.setState({ legendHeight: window.innerHeight / 5 });
     } else {
@@ -596,26 +596,26 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
-          <img
-            style={{
-              position: "relative",
-              marginTop: window.innerHeight / 10,
-              marginLeft: 50
-            }}
-            src="https://i.imgur.com/oEgq3R8.jpg"
-            height={(4 * window.innerHeight) / 5}
-            width="auto"
-          />
-          <img
-            style={{
-              position: "relative",
-              marginTop: window.innerHeight / 10,
-              marginLeft: 50
-            }}
-            src="https://i.imgur.com/Fn7Komh.jpg"
-            height={(4 * window.innerHeight) / 5}
-            width="auto"
-          />
+            <img
+              style={{
+                position: "relative",
+                marginTop: window.innerHeight / 10,
+                marginLeft: 50
+              }}
+              src="https://i.imgur.com/oEgq3R8.jpg"
+              height={(4 * window.innerHeight) / 5}
+              width="auto"
+            />
+            <img
+              style={{
+                position: "relative",
+                marginTop: window.innerHeight / 10,
+                marginLeft: 50
+              }}
+              src="https://i.imgur.com/Fn7Komh.jpg"
+              height={(4 * window.innerHeight) / 5}
+              width="auto"
+            />
         </div>
       </div>
     );
