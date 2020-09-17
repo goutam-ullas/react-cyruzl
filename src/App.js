@@ -37,7 +37,7 @@ class Application extends React.Component {
       researchState: true,
       researchWidth: 0,      
       legendState: true,
-      legendWidth: 0,
+      legendHeight: 0,
       squareText: "",
       circleText: "",
       maxThemes: 2,
@@ -479,7 +479,7 @@ class Application extends React.Component {
             role="button"
             aria-label="Legend"
             data-balloon-pos="down-right"
-            onClick={this.triangleFunction}
+            onClick={this.legendFunction}
             style={{
               fontSize: 32,
               position: "relative",
