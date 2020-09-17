@@ -166,6 +166,9 @@ class Application extends React.Component {
     if (this.state.researchState == false) {
       this.setState({ researchWidth: 0, researchState: true });
     }
+    if (this.state.legendState == false) {
+      this.setState({ legendHeight: 0, legendState: true });
+    }
     if (this.state.aboutState == true) {
       this.setState({ aboutWidth: window.innerWidth / 2 });
     } else {
@@ -178,6 +181,12 @@ class Application extends React.Component {
     this.setState(prevState => ({
       legendState: !prevState.legendState
     }));
+    if (this.state.aboutState == false) {
+      this.setState({ aboutWidth: 0, aboutState: true });
+    }
+    if (this.state.researchState == false) {
+      this.setState({ researchWidth: 0, researchState: true });
+    }    
     if (this.state.legendState == true) {
       this.setState({ legendHeight: window.innerHeight / 5 });
     } else {
@@ -192,6 +201,9 @@ class Application extends React.Component {
     }));
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
+    }
+    if (this.state.legendState == false) {
+      this.setState({ legendHeight: 0, legendState: true });
     }
     if (this.state.researchState == true) {
       this.setState({ researchWidth: window.innerWidth / 2 });
