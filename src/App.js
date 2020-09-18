@@ -36,7 +36,7 @@ class Application extends React.Component {
       aboutWidth: 0,
       researchState: true,
       researchWidth: 0,
-      researchBorder:0,
+      researchBorder: 0,
       legendState: true,
       legendHeight: 0,
       squareText: "",
@@ -207,7 +207,10 @@ class Application extends React.Component {
       this.setState({ legendHeight: 0, legendState: true });
     }
     if (this.state.researchState == true) {
-      this.setState({ researchWidth: window.innerWidth / 2 , researchBorder:50});
+      this.setState({
+        researchWidth: window.innerWidth / 2,
+        researchBorder: 50
+      });
     } else {
       this.setState({ researchWidth: 0, researchBorder: 0 });
     }
@@ -583,6 +586,16 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
+          <div
+            style={{
+              left: 0,
+              width: 50,
+              height: window.innerHeight,
+              position: "absolute",
+              backgroundColor: "black",
+              zIndex: 101
+            }}
+          />
           <span
             role="button"
             aria-label=""
@@ -591,24 +604,36 @@ class Application extends React.Component {
               fontSize: 22,
               position: "fixed",
               marginTop: 10,
+              marginLeft: 10,
               color: "white",
               zIndex: 300
             }}
           >
             &#10005;
           </span>
-          <img
-            style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
-            src="https://i.imgur.com/oEgq3R8.jpg"
-            height={(4 * window.innerHeight) / 5}
-            width="auto"
-          />
-          <img
-            style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
-            src="https://i.imgur.com/Fn7Komh.jpg"
-            height={(4 * window.innerHeight) / 5}
-            width="auto"
-          />
+          <div
+            className="research"
+            style={{
+              width: this.state.researchWidth,
+              leftBorder: this.state.researchBorder,
+              height: window.innerHeight,
+              fontSize: 28,
+              zIndex: 100
+            }}
+          >
+            <img
+              style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
+              src="https://i.imgur.com/oEgq3R8.jpg"
+              height={(4 * window.innerHeight) / 5}
+              width="auto"
+            />
+            <img
+              style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
+              src="https://i.imgur.com/Fn7Komh.jpg"
+              height={(4 * window.innerHeight) / 5}
+              width="auto"
+            />
+          </div>
         </div>
       </div>
     );
