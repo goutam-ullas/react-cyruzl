@@ -847,7 +847,6 @@ class Application extends React.Component {
             padding: 3
           }}
         >
-          {" "}
           {this.state.pointName} <br /> {this.state.layerName}
         </text>
 
