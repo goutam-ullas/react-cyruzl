@@ -141,8 +141,9 @@ class Application extends React.Component {
       var features = this.map.queryRenderedFeatures(e.point, {
         layers: ["gods"]
       });
-      if (e.features.length) {
-        console.log("god");
+      if (features.length) {
+        var {Name, Description} = features[0].properties;
+        console.log(Name);
       }
     });
 
