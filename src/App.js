@@ -642,6 +642,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.aboutFunction}
             style={{
+              font: "ballinger-mono",
               fontSize: 24,
               position: "relative",
               display: "inline",
@@ -729,6 +730,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.researchFunction}
             style={{
+              font: "ballinger-mono",
               fontSize: 24,
               position: "relative",
               display: "inline",
@@ -852,20 +854,24 @@ class Application extends React.Component {
             />
           </div>
         </div>
-        <text
-          style={{
-            position: "fixed",
-            left: this.state.popUpX,
-            top: this.state.popUpY,
-            textAlign: "center",
-            color: "white",
-            backgroundColor: "black",
-            alignSelf: "flex-start",
-            padding: this.state.popUpPad
-          }}
-        >
-          {this.state.pointName} <br /> {this.state.layerName}
-        </text>
+        <div>
+          <Typekit kitId="bor7jxc" />
+          <text
+            style={{
+              font: "ballinger-mono",
+              position: "fixed",
+              left: this.state.popUpX,
+              top: this.state.popUpY,
+              textAlign: "center",
+              color: "white",
+              backgroundColor: "black",
+              alignSelf: "flex-start",
+              padding: this.state.popUpPad
+            }}
+          >
+            {this.state.pointName} <br /> {this.state.layerName}
+          </text>
+        </div>
       </div>
     );
   }
