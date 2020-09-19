@@ -714,10 +714,11 @@ class Application extends React.Component {
             top: this.state.popUpY,
             width: this.state.popUpW,
             height: this.state.popUpH,
-            fontSize: 10,
+            fontSize: 14,
+            borderRadius: 5,
             zIndex: 100,
-            color: "black",
-            backgroundColor: "red"
+            color: "white",
+            backgroundColor: "black"
           }}
         >
           <text> {this.state.pointName} </text>
