@@ -144,26 +144,153 @@ class Application extends React.Component {
     });
 
     this.map.on("click", e => {
+      var pageX = window.event.pageX;
+      var pageY = window.event.pageY;
       var features = this.map.queryRenderedFeatures(e.point, {
         layers: ["gods"]
       });
-      var w = window.event;
       if (features.length) {
         this.setState({
           pointName: features[0].properties.Name,
-          layerName: "Gods",
-          popUpX: w.pageX,
-          popUpY: w.pageY,
+          layerName: "Place of Worship",
+          popUpX: pageX,
+          popUpY: pageY,
           popUpH: 50,
           popUpW: 150
         });
       } else {
-        this.setState({
-          popUpH: 0,
-          popUpW: 0,
-          pointName: "",
-          layerName: ""
+        features = this.map.queryRenderedFeatures(e.point, {
+          layers: ["gods-stores"]
         });
+        if (features.length) {
+          this.setState({
+            pointName: features[0].properties.Name,
+            layerName: "Religious Store",
+            popUpX: pageX,
+            popUpY: pageY,
+            popUpH: 50,
+            popUpW: 150
+          });
+        } else {
+          features = this.map.queryRenderedFeatures(e.point, {
+            layers: ["restaurant"]
+          });
+          if (features.length) {
+            this.setState({
+              pointName: features[0].properties.Name,
+              layerName: "Restaurant",
+              popUpX: pageX,
+              popUpY: pageY,
+              popUpH: 50,
+              popUpW: 150
+            });
+          } else {
+            features = this.map.queryRenderedFeatures(e.point, {
+              layers: ["beauty-and-wedding"]
+            });
+            if (features.length) {
+              this.setState({
+                pointName: features[0].properties.Name,
+                layerName: "Beauty and Wedding Store",
+                popUpX: pageX,
+                popUpY: pageY,
+                popUpH: 50,
+                popUpW: 150
+              });
+            } else {
+              features = this.map.queryRenderedFeatures(e.point, {
+                layers: ["kitchen-utensils"]
+              });
+              if (features.length) {
+                this.setState({
+                  pointName: features[0].properties.Name,
+                  layerName: "Kitchen Utensils Store",
+                  popUpX: pageX,
+                  popUpY: pageY,
+                  popUpH: 50,
+                  popUpW: 150
+                });
+              } else {
+                features = this.map.queryRenderedFeatures(e.point, {
+                  layers: ["kitchen-utensils"]
+                });
+                if (features.length) {
+                  this.setState({
+                    pointName: features[0].properties.Name,
+                    layerName: "Kitchen Utensils Store",
+                    popUpX: pageX,
+                    popUpY: pageY,
+                    popUpH: 50,
+                    popUpW: 150
+                  });
+                } else {
+                  features = this.map.queryRenderedFeatures(e.point, {
+                    layers: ["grocery-stores"]
+                  });
+                  if (features.length) {
+                    this.setState({
+                      pointName: features[0].properties.Name,
+                      layerName: "Grocery Store",
+                      popUpX: pageX,
+                      popUpY: pageY,
+                      popUpH: 50,
+                      popUpW: 150
+                    });
+                  } else {
+                    features = this.map.queryRenderedFeatures(e.point, {
+                      layers: ["toys-stores"]
+                    });
+                    if (features.length) {
+                      this.setState({
+                        pointName: features[0].properties.Name,
+                        layerName: "Toys Store",
+                        popUpX: pageX,
+                        popUpY: pageY,
+                        popUpH: 50,
+                        popUpW: 150
+                      });
+                    } else {
+                      features = this.map.queryRenderedFeatures(e.point, {
+                        layers: ["plastic-goods-stores"]
+                      });
+                      if (features.length) {
+                        this.setState({
+                          pointName: features[0].properties.Name,
+                          layerName: "Plastic Goods Store",
+                          popUpX: pageX,
+                          popUpY: pageY,
+                          popUpH: 50,
+                          popUpW: 150
+                        });
+                      } else {
+                        features = this.map.queryRenderedFeatures(e.point, {
+                          layers: ["bars-and-liquor"]
+                        });
+                        if (features.length) {
+                          this.setState({
+                            pointName: features[0].properties.Name,
+                            layerName: "Bar and Liquor Store",
+                            popUpX: pageX,
+                            popUpY: pageY,
+                            popUpH: 50,
+                            popUpW: 150
+                          });
+                        } else {
+                          this.setState({
+                            popUpH: 0,
+                            popUpW: 0,
+                            pointName: "",
+                            layerName: ""
+                          });
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     });
 
@@ -721,8 +848,17 @@ class Application extends React.Component {
             backgroundColor: "black"
           }}
         >
-          <text style={{position: "inline", textAlign: "center", verticalAlign: "middle", margin: "auto"}}> {this.state.pointName} <br/> {this.state.layerName}</text>
-          
+          <text
+            style={{
+              position: "inline",
+              textAlign: "center",
+              verticalAlign: "middle",
+              margin: "auto"
+            }}
+          >
+            {" "}
+            {this.state.pointName} <br /> {this.state.layerName}
+          </text>
         </div>
       </div>
     );
