@@ -207,6 +207,12 @@ class Application extends React.Component {
     this.setState(prevState => ({
       aboutState: !prevState.aboutState
     }));
+    this.setState({
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
+    });
     if (this.state.researchState == false) {
       this.setState({ researchWidth: 0, researchState: true });
     }
@@ -225,6 +231,12 @@ class Application extends React.Component {
     this.setState(prevState => ({
       legendState: !prevState.legendState
     }));
+    this.setState({
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
+    });
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
     }
@@ -243,6 +255,12 @@ class Application extends React.Component {
     this.setState(prevState => ({
       researchState: !prevState.researchState
     }));
+    this.setState({
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
+    });
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
     }
@@ -265,7 +283,11 @@ class Application extends React.Component {
       aboutWidth: 0,
       aboutState: true,
       legendWidth: 0,
-      legendState: false
+      legendState: false,
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
     });
     if (this.state.circleState == this.state.maxThemes) {
       this.setState({ circleState: 0 });
@@ -294,7 +316,11 @@ class Application extends React.Component {
       aboutWidth: 0,
       aboutState: true,
       legendWidth: 0,
-      legendState: false
+      legendState: false,
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
     });
     if (this.state.squareState == true) {
       this.setState({ squareText: "Square" });
