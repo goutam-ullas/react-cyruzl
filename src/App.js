@@ -56,6 +56,7 @@ class Application extends React.Component {
       imageDimX1: 0,
       imageZindex1: 1
     };
+    this.popUpRef = React.createRef();
     this.circleFunction = this.circleFunction.bind(this);
     this.squareFunction = this.squareFunction.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
@@ -92,7 +93,6 @@ class Application extends React.Component {
     this.map.scrollZoom.disable();
     this.map.doubleClickZoom.disable();
     this.map.dragPan.enable();
-    // kick off the polyfill!
     smoothscroll.polyfill();
     document.addEventListener("mousedown", this.handleClickOutside);
     var deltaDistance = 100;
@@ -135,38 +135,15 @@ class Application extends React.Component {
         },
         true
       );
-      // Create a popup, but don't add it to the map yet.
-      var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+    });
+
+    this.map.on("click", "gods", e => {
+      var features = this.map.queryRenderedFeatures(e.point, {
+        layers: ["gods"]
       });
-
-      this.map.on("mouseenter", "places", function(e) {
-        // Change the cursor style as a UI indicator.
-        this.map.getCanvas().style.cursor = "pointer";
-
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.description;
-
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(this.map);
-      });
-
-      this.map.on("mouseleave", "places", function() {
-        this.map.getCanvas().style.cursor = "";
-        popup.remove();
-      });
+      if (e.features.length) {
+        console.log("god");
+      }
     });
 
     this.map.on("move", () => {
@@ -319,7 +296,9 @@ class Application extends React.Component {
             height: this.state.mapHeight,
             width: this.state.mapWidth
           }}
-        />
+        >
+          <div ref={el => (this.popUpRef = el)} />
+        </div>
         <div
           style={{
             fontSize: 24,
