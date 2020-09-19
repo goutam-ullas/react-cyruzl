@@ -852,15 +852,6 @@ class Application extends React.Component {
             />
           </div>
         </div>
-        <div
-          style={{
-            height: this.state.popUpH,
-            width: this.state.popUpW,
-            position: "fixed",
-            left: this.state.popUpX,
-            top: this.state.popUpY
-          }}
-        >
           <text
             style={{
               position: "fixed",
@@ -876,7 +867,6 @@ class Application extends React.Component {
             {this.state.pointName} <br /> {this.state.layerName}
           </text>
         </div>
-      </div>
     );
   }
 }
