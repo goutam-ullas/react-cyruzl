@@ -642,7 +642,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.aboutFunction}
             style={{
-              font: "ballinger-mono",
+              fontFamily: "ballinger-mono",
               fontSize: 24,
               position: "relative",
               display: "inline",
@@ -730,7 +730,7 @@ class Application extends React.Component {
             aria-label=""
             onClick={this.researchFunction}
             style={{
-              font: "ballinger-mono",
+              fontFamily: "ballinger-mono",
               fontSize: 24,
               position: "relative",
               display: "inline",
@@ -857,7 +857,8 @@ class Application extends React.Component {
         <div>
           <text
             style={{
-              font: "ballinger-mono",
+              fontFamily: "ballinger-mono",
+              fontSize:12,
               position: "fixed",
               left: this.state.popUpX,
               top: this.state.popUpY,
