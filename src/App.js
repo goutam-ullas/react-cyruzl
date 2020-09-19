@@ -53,9 +53,15 @@ class Application extends React.Component {
       videoHeight: 360,
       videoWidth: 640,
       imageDimX1: 0,
-      imageZindex1: 1
+      imageZindex1: 1,
+      popUp: false,
+      popUpX: 0,
+      popUpY: 0,
+      popUpH: 0,
+      popUpW: 0,
+      pointName: "",
+      layerName: ""
     };
-    this.popUpRef = React.createRef();
     this.circleFunction = this.circleFunction.bind(this);
     this.squareFunction = this.squareFunction.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
@@ -137,25 +143,45 @@ class Application extends React.Component {
       );
     });
 
-    this.map.on("click", "gods", e => {
+  /*  window.addEventListener(
+      "click",
+      e => {
+        e.preventDefault();
+        if (this.state.popUp == true) {
+          this.setState(prevState => ({
+            popUp: !prevState.popUp
+          }));
+        } else {
+          this.setState({ popUpH: 0, popUpW: 0, pointName: "", layerName: "" });
+          console.log(this.state.popUpX);
+          console.log(this.state.popUpY);
+          console.log(this.state.popUpH);
+          console.log(this.state.popUpW);
+        }
+      },
+      false
+    );*/
+
+    this.map.on("click", e => {
       var features = this.map.queryRenderedFeatures(e.point, {
         layers: ["gods"]
       });
-
+      var w = window.event;
       if (features.length) {
-        var { Name, Description } = features[0].properties;
-        const placeholder = document.createElement("div");
-        //ReactDOM.render(this.popUpRef,placeholder);
-        placeholder.innerHTML = Name;
-        new mapboxgl.Popup({
-          closeButton: true,
-          closeOnClick: true,
-          anchor: "bottom-left"
-        })
-          .setLngLat(features[0].geometry.coordinates)
-          .setHTML("Hello World")
-          .addTo(this.map);
-        console.log(Name);
+        this.setState({
+          pointName: features[0].properties.Name,
+          layerName: "Gods",
+          popUpX: w.pageX,
+          popUpY: w.pageY,
+          popUpH: 30,
+          popUpW: 100
+        });
+      } else {
+        this.setState({ 
+          popUpH: 0, 
+          popUpW: 0, 
+          pointName: "", 
+          layerName: "" });
       }
     });
 
@@ -658,6 +684,23 @@ class Application extends React.Component {
               width="auto"
             />
           </div>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            display: "flex",
+            left: this.state.popUpX,
+            top: this.state.popUpY,
+            width: this.state.popUpW,
+            height: this.state.popUpH,
+            fontSize: 10,
+            zIndex: 100,
+            color: "black",
+            backgroundColor: "red"
+          }}
+        >
+          <text> {this.state.pointName} </text>
+          <text> {this.state.layerName} </text>
         </div>
       </div>
     );
