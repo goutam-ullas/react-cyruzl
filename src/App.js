@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import {
-  Slider,
   SliderInput,
   SliderTrack,
   SliderTrackHighlight,
