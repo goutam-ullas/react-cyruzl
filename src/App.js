@@ -154,8 +154,8 @@ class Application extends React.Component {
           layerName: "Gods",
           popUpX: w.pageX,
           popUpY: w.pageY,
-          popUpH: 30,
-          popUpW: 100
+          popUpH: 50,
+          popUpW: 150
         });
       } else {
         this.setState({
@@ -721,8 +721,8 @@ class Application extends React.Component {
             backgroundColor: "black"
           }}
         >
-          <text> {this.state.pointName} </text>
-          <text> {this.state.layerName} </text>
+          <text style={{position: "inline", textAlign: "center", verticalAlign: "middle", margin: "auto"}}> {this.state.pointName} <br/> {this.state.layerName}</text>
+          
         </div>
       </div>
     );
