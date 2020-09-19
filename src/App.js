@@ -180,7 +180,11 @@ class Application extends React.Component {
       this.setState({
         lng: this.map.getCenter().lng.toFixed(4),
         lat: this.map.getCenter().lat.toFixed(4),
-        zoom: this.map.getZoom().toFixed(2)
+        zoom: this.map.getZoom().toFixed(2),
+        popUpH: 0,
+        popUpW: 0,
+        pointName: "",
+        layerName: ""
       });
     });
   }
