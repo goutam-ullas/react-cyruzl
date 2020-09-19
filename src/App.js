@@ -855,7 +855,6 @@ class Application extends React.Component {
           </div>
         </div>
         <div>
-          <Typekit kitId="bor7jxc" />
           <text
             style={{
               font: "ballinger-mono",
