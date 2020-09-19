@@ -143,25 +143,6 @@ class Application extends React.Component {
       );
     });
 
-  /*  window.addEventListener(
-      "click",
-      e => {
-        e.preventDefault();
-        if (this.state.popUp == true) {
-          this.setState(prevState => ({
-            popUp: !prevState.popUp
-          }));
-        } else {
-          this.setState({ popUpH: 0, popUpW: 0, pointName: "", layerName: "" });
-          console.log(this.state.popUpX);
-          console.log(this.state.popUpY);
-          console.log(this.state.popUpH);
-          console.log(this.state.popUpW);
-        }
-      },
-      false
-    );*/
-
     this.map.on("click", e => {
       var features = this.map.queryRenderedFeatures(e.point, {
         layers: ["gods"]
@@ -177,12 +158,22 @@ class Application extends React.Component {
           popUpW: 100
         });
       } else {
-        this.setState({ 
-          popUpH: 0, 
-          popUpW: 0, 
-          pointName: "", 
-          layerName: "" });
+        this.setState({
+          popUpH: 0,
+          popUpW: 0,
+          pointName: "",
+          layerName: ""
+        });
       }
+    });
+
+    this.map.on("drag", () => {
+      this.setState({
+        popUpH: 0,
+        popUpW: 0,
+        pointName: "",
+        layerName: ""
+      });
     });
 
     this.map.on("move", () => {
