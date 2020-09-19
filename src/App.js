@@ -852,21 +852,21 @@ class Application extends React.Component {
             />
           </div>
         </div>
-          <text
-            style={{
-              position: "fixed",
-              left: this.state.popUpX,
-              top: this.state.popUpY,
-              textAlign: "center",
-              color: "white",
-              backgroundColor: "black",
-              alignSelf: "flex-start",
-              padding: this.state.popUpPad
-            }}
-          >
-            {this.state.pointName} <br /> {this.state.layerName}
-          </text>
-        </div>
+        <text
+          style={{
+            position: "fixed",
+            left: this.state.popUpX,
+            top: this.state.popUpY,
+            textAlign: "center",
+            color: "white",
+            backgroundColor: "black",
+            alignSelf: "flex-start",
+            padding: this.state.popUpPad
+          }}
+        >
+          {this.state.pointName} <br /> {this.state.layerName}
+        </text>
+      </div>
     );
   }
 }
