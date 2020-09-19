@@ -687,7 +687,7 @@ class Application extends React.Component {
         </div>
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             display: "flex",
             left: this.state.popUpX,
             top: this.state.popUpY,
