@@ -833,33 +833,24 @@ class Application extends React.Component {
             />
           </div>
         </div>
-        <div
+
+        <text
           style={{
             position: "fixed",
-            display: "flex",
             left: this.state.popUpX,
             top: this.state.popUpY,
-            width: this.state.popUpW,
-            height: this.state.popUpH,
-            fontSize: 14,
-            borderRadius: 5,
-            zIndex: 100,
+            textAlign: "center",
+            verticalAlign: "middle",
             color: "white",
-            backgroundColor: "black"
+            backgroundColor: "black",
+            alignSelf: "flex-start",
+            padding: 3
           }}
         >
-          <text
-            style={{
-              position: "inline",
-              textAlign: "center",
-              verticalAlign: "middle",
-              margin: "auto"
-            }}
-          >
-            {" "}
-            {this.state.pointName} <br /> {this.state.layerName}
-          </text>
-        </div>
+          {" "}
+          {this.state.pointName} <br /> {this.state.layerName}
+        </text>
+
       </div>
     );
   }
