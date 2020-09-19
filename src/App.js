@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import {
   Slider,
   SliderInput,
@@ -90,6 +91,7 @@ class Application extends React.Component {
       attributionControl: false,
       interactive: false
     });
+
     this.map.scrollZoom.disable();
     this.map.doubleClickZoom.disable();
     this.map.dragPan.enable();
@@ -141,8 +143,20 @@ class Application extends React.Component {
       var features = this.map.queryRenderedFeatures(e.point, {
         layers: ["gods"]
       });
+
       if (features.length) {
-        var {Name, Description} = features[0].properties;
+        var { Name, Description } = features[0].properties;
+        const placeholder = document.createElement("div");
+        //ReactDOM.render(this.popUpRef,placeholder);
+        placeholder.innerHTML = Name;
+        new mapboxgl.Popup({
+          closeButton: true,
+          closeOnClick: true,
+          anchor: "bottom-left"
+        })
+          .setLngLat(features[0].geometry.coordinates)
+          .setHTML("Hello World")
+          .addTo(this.map);
         console.log(Name);
       }
     });
