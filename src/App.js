@@ -60,7 +60,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     };
     this.circleFunction = this.circleFunction.bind(this);
     this.squareFunction = this.squareFunction.bind(this);
@@ -155,8 +156,9 @@ class Application extends React.Component {
           layerName: "Place of Worship",
           popUpX: pageX,
           popUpY: pageY,
-          popUpH: 50,
-          popUpW: 150
+          popUpH: 500,
+          popUpW: 500,
+          popUpPad: 3
         });
       } else {
         features = this.map.queryRenderedFeatures(e.point, {
@@ -168,8 +170,9 @@ class Application extends React.Component {
             layerName: "Religious Store",
             popUpX: pageX,
             popUpY: pageY,
-            popUpH: 50,
-            popUpW: 150
+            popUpH: 500,
+            popUpW: 500,
+            popUpPad: 3
           });
         } else {
           features = this.map.queryRenderedFeatures(e.point, {
@@ -181,8 +184,9 @@ class Application extends React.Component {
               layerName: "Restaurant",
               popUpX: pageX,
               popUpY: pageY,
-              popUpH: 50,
-              popUpW: 150
+              popUpH: 500,
+              popUpW: 500,
+              popUpPad: 3
             });
           } else {
             features = this.map.queryRenderedFeatures(e.point, {
@@ -194,8 +198,9 @@ class Application extends React.Component {
                 layerName: "Beauty and Wedding Store",
                 popUpX: pageX,
                 popUpY: pageY,
-                popUpH: 50,
-                popUpW: 150
+                popUpH: 500,
+                popUpW: 500,
+                popUpPad: 3
               });
             } else {
               features = this.map.queryRenderedFeatures(e.point, {
@@ -207,8 +212,9 @@ class Application extends React.Component {
                   layerName: "Kitchen Utensils Store",
                   popUpX: pageX,
                   popUpY: pageY,
-                  popUpH: 50,
-                  popUpW: 150
+                  popUpH: 500,
+                  popUpW: 500,
+                  popUpPad: 3
                 });
               } else {
                 features = this.map.queryRenderedFeatures(e.point, {
@@ -220,8 +226,9 @@ class Application extends React.Component {
                     layerName: "Kitchen Utensils Store",
                     popUpX: pageX,
                     popUpY: pageY,
-                    popUpH: 50,
-                    popUpW: 150
+                    popUpH: 500,
+                    popUpW: 500,
+                    popUpPad: 3
                   });
                 } else {
                   features = this.map.queryRenderedFeatures(e.point, {
@@ -233,8 +240,9 @@ class Application extends React.Component {
                       layerName: "Grocery Store",
                       popUpX: pageX,
                       popUpY: pageY,
-                      popUpH: 50,
-                      popUpW: 150
+                      popUpH: 500,
+                      popUpW: 500,
+                      popUpPad: 3
                     });
                   } else {
                     features = this.map.queryRenderedFeatures(e.point, {
@@ -246,8 +254,9 @@ class Application extends React.Component {
                         layerName: "Toys Store",
                         popUpX: pageX,
                         popUpY: pageY,
-                        popUpH: 50,
-                        popUpW: 150
+                        popUpH: 500,
+                        popUpW: 500,
+                        popUpPad: 3
                       });
                     } else {
                       features = this.map.queryRenderedFeatures(e.point, {
@@ -259,8 +268,9 @@ class Application extends React.Component {
                           layerName: "Plastic Goods Store",
                           popUpX: pageX,
                           popUpY: pageY,
-                          popUpH: 50,
-                          popUpW: 150
+                          popUpH: 500,
+                          popUpW: 500,
+                          popUpPad: 3
                         });
                       } else {
                         features = this.map.queryRenderedFeatures(e.point, {
@@ -272,15 +282,17 @@ class Application extends React.Component {
                             layerName: "Bar and Liquor Store",
                             popUpX: pageX,
                             popUpY: pageY,
-                            popUpH: 50,
-                            popUpW: 150
+                            popUpH: 500,
+                            popUpW: 500,
+                            popUpPad: 3
                           });
                         } else {
                           this.setState({
                             popUpH: 0,
                             popUpW: 0,
                             pointName: "",
-                            layerName: ""
+                            layerName: "",
+                            popUpPad: 0
                           });
                         }
                       }
@@ -299,7 +311,8 @@ class Application extends React.Component {
         popUpH: 0,
         popUpW: 0,
         pointName: "",
-        layerName: ""
+        layerName: "",
+        popUpPad: 0
       });
     });
 
@@ -311,7 +324,8 @@ class Application extends React.Component {
         popUpH: 0,
         popUpW: 0,
         pointName: "",
-        layerName: ""
+        layerName: "",
+        popUpPad: 0
       });
     });
   }
@@ -338,7 +352,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     });
     if (this.state.researchState == false) {
       this.setState({ researchWidth: 0, researchState: true });
@@ -362,7 +377,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     });
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
@@ -386,7 +402,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     });
     if (this.state.aboutState == false) {
       this.setState({ aboutWidth: 0, aboutState: true });
@@ -414,7 +431,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     });
     if (this.state.circleState == this.state.maxThemes) {
       this.setState({ circleState: 0 });
@@ -447,7 +465,8 @@ class Application extends React.Component {
       popUpH: 0,
       popUpW: 0,
       pointName: "",
-      layerName: ""
+      layerName: "",
+      popUpPad: 0
     });
     if (this.state.squareState == true) {
       this.setState({ squareText: "Square" });
@@ -833,23 +852,30 @@ class Application extends React.Component {
             />
           </div>
         </div>
-
-        <text
+        <div
           style={{
+            height: this.state.popUpH,
+            width: this.state.popUpW,
             position: "fixed",
             left: this.state.popUpX,
-            top: this.state.popUpY,
-            textAlign: "center",
-            verticalAlign: "middle",
-            color: "white",
-            backgroundColor: "black",
-            alignSelf: "flex-start",
-            padding: 3
+            top: this.state.popUpY
           }}
         >
-          {this.state.pointName} <br /> {this.state.layerName}
-        </text>
-
+          <text
+            style={{
+              position: "fixed",
+              left: this.state.popUpX,
+              top: this.state.popUpY,
+              textAlign: "center",
+              color: "white",
+              backgroundColor: "black",
+              alignSelf: "flex-start",
+              padding: this.state.popUpPad
+            }}
+          >
+            {this.state.pointName} <br /> {this.state.layerName}
+          </text>
+        </div>
       </div>
     );
   }
